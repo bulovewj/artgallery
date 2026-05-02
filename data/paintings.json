@@ -9,16 +9,5 @@
     "image_path": "",
     "sold": false,
     "is_new": true
-  },
-  {
-    "id": "0288e6fd-2efc-4330-85d2-5234c18e9669",
-    "title": "가을향기",
-    "category": "풍경",
-    "price": 70000,
-    "size": "20*30cm",
-    "description": "가을들판의 들꽃들의 향연",
-    "image_url": "https://raw.githubusercontent.com/bulovewj/artgallery/main/assets/paintings/36f689d25c764cef959651ac9611e6fb.jpeg",
-    "sold": false,
-    "is_new": true
   }
 ]
