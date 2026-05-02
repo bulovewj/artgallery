@@ -9,5 +9,16 @@
     "image_url": "https://raw.githubusercontent.com/bulovewj/artgallery/main/assets/paintings/a9140b4612ee4b2c80094b40a11d5c94.jpeg",
     "sold": false,
     "is_new": true
+  },
+  {
+    "id": "3ff4fcb3-4b36-4777-917b-185be4847a7a",
+    "title": "봄의향기",
+    "category": "꽃",
+    "price": 60000,
+    "size": "15x20cm",
+    "description": "싱그런 봄향기를 전합니다",
+    "image_url": "https://raw.githubusercontent.com/bulovewj/artgallery/main/assets/paintings/e6bd0b6de69a4841aa154d882e21307e.jpeg",
+    "sold": false,
+    "is_new": true
   }
 ]
