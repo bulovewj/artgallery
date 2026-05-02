@@ -1,27 +1,18 @@
 import streamlit as st
-import base64
 from pathlib import Path
 import sys
 sys.path.append(str(Path(__file__).parent.parent))
 from utils import load_paintings, get_categories, get_site_texts
 
-def img_to_base64(img_path):
-    try:
-        with open(img_path, "rb") as f:
-            return base64.b64encode(f.read()).decode()
-    except:
-        return None
-
 def show_gallery():
     paintings = load_paintings()
-    texts = get_site_texts()
+    texts     = get_site_texts()
 
-    # 인트로 배너 (편집 가능한 텍스트)
     st.markdown(f"""
     <div class="intro-banner">
         <div class="intro-text">
-            {texts.get("intro_line1", "")}<br>
-            {texts.get("intro_line2", "")}
+            {texts.get("intro_line1","")}<br>
+            {texts.get("intro_line2","")}
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -36,7 +27,7 @@ def show_gallery():
         return
 
     categories = get_categories(paintings)
-    all_cats = ['전체'] + categories
+    all_cats   = ['전체'] + categories
 
     st.markdown('<div class="section-title">— 작품 목록 —</div>', unsafe_allow_html=True)
     st.markdown('<div class="section-divider"></div>', unsafe_allow_html=True)
@@ -58,26 +49,23 @@ def show_gallery():
         return
 
     cols = st.columns(3, gap="medium")
-
     for idx, painting in enumerate(filtered):
         with cols[idx % 3]:
             is_sold = painting.get("sold", False)
-            img_path = painting.get("image_path", "")
-            b64 = img_to_base64(img_path) if img_path else None
+            # image_url (GitHub raw) 또는 image_path (로컬) 둘 다 지원
+            img_url = painting.get("image_url") or painting.get("image_path", "")
 
-            if b64:
-                ext = Path(img_path).suffix.lower()
-                mime = "image/jpeg" if ext in ['.jpg', '.jpeg'] else "image/png" if ext == '.png' else "image/webp"
-                img_tag = f'<img src="data:{mime};base64,{b64}" alt="{painting.get("title","작품")}">'
+            if img_url:
+                img_tag = f'<img src="{img_url}" alt="{painting.get("title","작품")}" style="width:100%;height:100%;object-fit:cover;">'
             else:
                 img_tag = '<div style="width:100%;aspect-ratio:4/5;background:linear-gradient(135deg,#F5F0E8,#EDE5D8);display:flex;align-items:center;justify-content:center;color:#B8935A;font-size:2.5rem;">🎨</div>'
 
             sold_overlay = '<div class="sold-overlay"><div class="sold-badge">SOLD OUT</div></div>' if is_sold else ''
-            new_badge = '<div class="tag-new">New</div>' if painting.get("is_new") and not is_sold else ''
-            price_class = "painting-price sold" if is_sold else "painting-price"
-            price_html = f'<div class="{price_class}">{painting["price"]:,}원</div>' if painting.get("price") else ''
-            size_html = f' · {painting["size"]}' if painting.get("size") else ''
-            desc_html = f'<div style="font-size:0.78rem;color:#7A8C6E;margin-top:8px;line-height:1.6;">{painting.get("description","")}</div>' if painting.get("description") else ''
+            new_badge    = '<div class="tag-new">New</div>' if painting.get("is_new") and not is_sold else ''
+            price_class  = "painting-price sold" if is_sold else "painting-price"
+            price_html   = f'<div class="{price_class}">{painting["price"]:,}원</div>' if painting.get("price") else ''
+            size_html    = f' · {painting["size"]}' if painting.get("size") else ''
+            desc_html    = f'<div style="font-size:0.78rem;color:#7A8C6E;margin-top:8px;line-height:1.6;">{painting["description"]}</div>' if painting.get("description") else ''
 
             st.markdown(f"""
             <div class="painting-card" style="margin-bottom:24px;">
@@ -92,9 +80,8 @@ def show_gallery():
             </div>
             """, unsafe_allow_html=True)
 
-    # 하단 CTA (편집 가능한 텍스트)
     st.markdown("<br><br>", unsafe_allow_html=True)
-    c1, c2, c3 = st.columns([1, 2, 1])
+    c1, c2, c3 = st.columns([1,2,1])
     with c2:
         st.markdown(f"""
         <div style="text-align:center;padding:30px;border:1px solid #D4C5B0;background:#FAF7F2;">
