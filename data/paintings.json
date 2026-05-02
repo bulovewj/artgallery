@@ -9,5 +9,16 @@
     "image_path": "",
     "sold": false,
     "is_new": true
+  },
+  {
+    "id": "ad701d8a-b4c4-40b1-b801-21487709bd37",
+    "title": "귀여운 햄스터",
+    "category": "정물",
+    "price": 50000,
+    "size": "조그맘",
+    "description": "귀여움",
+    "image_url": "https://raw.githubusercontent.com/bulovewj/artgallery/main/assets/paintings/52f03a5137fe42a0bffc9baf90569166.jpeg",
+    "sold": false,
+    "is_new": true
   }
 ]
