@@ -1,13 +1,1 @@
-[
-  {
-    "id": "test1",
-    "title": "봄날의 장미",
-    "category": "꽃",
-    "price": 80000,
-    "size": "A4",
-    "description": "따뜻한 봄날 정원에서 핀 장미를 담았습니다",
-    "image_path": "",
-    "sold": false,
-    "is_new": true
-  }
-]
+[]
