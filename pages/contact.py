@@ -14,19 +14,20 @@ def show_contact():
 
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        intro = contact.get("intro", "").replace("\\n", "\n")
-
+        # 인트로 텍스트
+        intro_lines = contact.get("intro", "").replace("\\n", "\n")
         st.markdown(f"""
         <div class="contact-section">
             <div class="contact-title">언제든 편히 연락 주세요</div>
-            <div class="contact-desc">{intro.replace(chr(10), "<br>")}</div>
+            <div class="contact-desc">{intro_lines.replace(chr(10), "<br>")}</div>
+
             <div class="contact-items">
                 <div class="contact-item">
-                    <div class="contact-label">📞&nbsp; 전화 / 문자</div>
+                    <div class="contact-label">📞  전화 / 문자</div>
                     <div class="contact-value">{contact.get("phone", "")}</div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-label">📷&nbsp; 인스타그램</div>
+                    <div class="contact-label">📷  인스타그램</div>
                     <div class="contact-value">{contact.get("instagram", "")}</div>
                 </div>
             </div>
@@ -35,6 +36,7 @@ def show_contact():
 
         st.markdown("<br>", unsafe_allow_html=True)
 
+        # 구매 안내
         st.markdown("""
         <div style="border:1px solid #D4C5B0;padding:30px;background:#FAF7F2;">
             <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;
