@@ -31,5 +31,16 @@
     "image_url": "https://raw.githubusercontent.com/bulovewj/artgallery/main/assets/paintings/be85692a0ab64b27a2db306cee00398a.jpeg",
     "sold": false,
     "is_new": true
+  },
+  {
+    "id": "b126056d-13df-4716-99a1-820e4041ab03",
+    "title": "가을풍경",
+    "category": "꽃",
+    "price": 80000,
+    "size": "",
+    "description": "나무판에 그린 그림이라 선명함이 더욱 돋보이는작품입니다  아련한 어린시절의 들판속으로 여러분을 초대합니다 ",
+    "image_url": "https://raw.githubusercontent.com/bulovewj/artgallery/main/assets/paintings/6ea1c230af8a43f48cc5fecfce0ef2ff.jpeg",
+    "sold": false,
+    "is_new": true
   }
 ]
