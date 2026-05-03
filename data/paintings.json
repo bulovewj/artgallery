@@ -20,5 +20,16 @@
     "image_url": "https://raw.githubusercontent.com/bulovewj/artgallery/main/assets/paintings/e6bd0b6de69a4841aa154d882e21307e.jpeg",
     "sold": false,
     "is_new": true
+  },
+  {
+    "id": "30b927a9-f63b-4675-a596-8f7f6f8996ef",
+    "title": "봄의향기",
+    "category": "꽃",
+    "price": 50000,
+    "size": "15x20cm",
+    "description": "나무판에 그린 아크릴화입니다\n살랑거리는 바람에 꽃잎이 나풀거리는듯 한 작품입니다  맑은하늘에 푸른 들판에 쑥부쟁이꽃을 담았습니다 \n아크릴 물감을 여러번 올려서 선명함이 더욱 돋보이는 작품 입니다",
+    "image_url": "https://raw.githubusercontent.com/bulovewj/artgallery/main/assets/paintings/be85692a0ab64b27a2db306cee00398a.jpeg",
+    "sold": false,
+    "is_new": true
   }
 ]
