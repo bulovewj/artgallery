@@ -42,5 +42,16 @@
     "image_url": "https://raw.githubusercontent.com/bulovewj/artgallery/main/assets/paintings/6ea1c230af8a43f48cc5fecfce0ef2ff.jpeg",
     "sold": false,
     "is_new": true
+  },
+  {
+    "id": "cf01ebe0-319f-40dd-a497-1cea5578abde",
+    "title": "수레국화를 만나고",
+    "category": "꽃",
+    "price": 50000,
+    "size": "20x20cm",
+    "description": "나무판에 아크릴 물감으로 여러겹 올려 그린 꽃그림입니다 실제로 보면 입체감과 색상의 선명함이 더욱 돋보입니다",
+    "image_url": "https://raw.githubusercontent.com/bulovewj/artgallery/main/assets/paintings/e046433c1f914d47aa981b4f2dff55e6.jpeg",
+    "sold": false,
+    "is_new": true
   }
 ]
